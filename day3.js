@@ -17,12 +17,12 @@ function x(pos, list, win){
             if (list[j][pos] == '0') list[j] = null;;
         }
     } else if (ones != zeroes) {
-        for (var l in list){
-            if (list[l][pos] == '1') list[l] = null;
+        for (var k in list){
+            if (list[k][pos] == '1') list[k] = null;
         }
     } else {
-        for (var k in list){
-            if (list[k][pos] == (win === '1' ? '0' : '1')) list[k] = null;
+        for (var l in list){
+            if (list[l][pos] == (win === '1' ? '0' : '1')) list[l] = null;
         }
     }
     var new_list = list.filter(function (a){
