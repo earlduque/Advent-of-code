@@ -30,7 +30,7 @@ function x(pos, list, win){
     }
     if ((win === '1' && ones > zeroes) || (win === '0' && ones < zeroes)){
         for (var j in list){
-            if (list[j][pos] == '0') list[j] = null;;
+            if (list[j][pos] == '0') list[j] = null;
         }
     } else if (ones != zeroes) {
         for (var k in list){
