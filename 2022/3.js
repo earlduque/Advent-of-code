@@ -328,13 +328,18 @@ for (var sack in sacks){
     }
 }
 
-var total = 0;
-for (var value in values){
-    if (values[value].toUpperCase() === values[value]){
-        total += values[value].charCodeAt(0)-38;
-    } else {
-        total += values[value].charCodeAt(0)-96;
+var total = charCodes(values);
+
+function charCodes(values){
+    var this_total = 0;
+    for (var value in values){
+        if (values[value].toUpperCase() === values[value]){
+            this_total += values[value].charCodeAt(0)-38;
+        } else {
+            this_total += values[value].charCodeAt(0)-96;
+        }
     }
+    return this_total;
 }
 
 console.log(total);
@@ -372,13 +377,6 @@ for (var i in input_array){
     }
 }
 
-var real_total = 0;
-for (var value in real_values){
-    if (real_values[value].toUpperCase() === real_values[value]){
-        real_total += real_values[value].charCodeAt(0)-38;
-    } else {
-        real_total += real_values[value].charCodeAt(0)-96;
-    }
-}
+var real_total = charCodes(real_values);
 
 console.log(real_total);
