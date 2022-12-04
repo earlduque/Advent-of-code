@@ -1018,10 +1018,7 @@ for (var i in pairs){
 var fully_contained = 0;
 
 pairs.forEach((x) => {
-    let a = parseInt(x[0][0]);
-    let b = parseInt(x[0][1]);
-    let c = parseInt(x[1][0]);
-    let d = parseInt(x[1][1]);
+    let [a,b,c,d] = [parseInt(x[0][0]), parseInt(x[0][1]), parseInt(x[1][0]), parseInt(x[1][1])];
     if ((c >= a && d <= b) || 
         (a >= c && b <= d)) fully_contained++;
 });
@@ -1032,10 +1029,7 @@ console.log(fully_contained);
 var overlap = 0;
 
 pairs.forEach((x) => {
-    let a = parseInt(x[0][0]);
-    let b = parseInt(x[0][1]);
-    let c = parseInt(x[1][0]);
-    let d = parseInt(x[1][1]);
+    let [a,b,c,d] = [parseInt(x[0][0]), parseInt(x[0][1]), parseInt(x[1][0]), parseInt(x[1][1])];
     if ((a >= c && a <= d) ||
         (b >= c && b <= d) ||
         (c >= a && c <= b) ||
