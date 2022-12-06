@@ -11,10 +11,10 @@ const crates = [
 ];
 var crates1 = JSON.parse(JSON.stringify(crates)),
     crates2 = JSON.parse(JSON.stringify(crates));
-var input = `move 6 from 2 to 1
-move 4 from 6 to 3
-...
-move 5 from 8 to 9`; //copy move list here
+
+const filename = '2022/Day 5/input.txt';
+const fs = require('fs');
+var input = fs.readFileSync(filename, 'utf-8');
 
 //part1
 

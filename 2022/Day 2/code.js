@@ -1,4 +1,6 @@
-var input = ``; //copy and paste input here
+const filename = '2022/Day 2/input.txt';
+const fs = require('fs');
+var input = fs.readFileSync(filename, 'utf-8');
 
 //part 1
 var input_lines = input.split('\n');
