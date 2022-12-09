@@ -6,7 +6,7 @@ const filename = '2022/Day ' + day + '/' + (use_example ? 'example2' : 'input') 
 const fs = require('fs');
 var input = fs.readFileSync(filename, 'utf-8');
 
-//part 1
+//part 2
 var rope = [
     {'x':0, 'y':0},
     {'x':0, 'y':0},
