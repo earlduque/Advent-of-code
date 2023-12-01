@@ -15,7 +15,7 @@ Join Code: 680037-b8dabe94
 
 # Earl's setup
 
-1. Notice how I set up my [Day 1, 2023](https://github.com/earlduque/Advent-of-code/tree/main/Template/Day%201) folder: example files, an input file, a part 1 file, and a part 2 file.
+1. Notice how I set up my [Day 1 Template](https://github.com/earlduque/Advent-of-code/tree/main/Template/Day%201) folder: example files, an input file, a part 1 file, and a part 2 file.
 2. Every day of AoC, I copy and paste the example input (as is) into the example file, and the challenge input into the input file (again, as is).
 3. The code on the part1 and part2 files, when ran, grabs the text from the example or input file for me to use in my challenge code.
 4. I use [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) to execute the code inside VS Code.
