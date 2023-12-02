@@ -19,7 +19,7 @@ const slope = {
 const width = input[0].length - 1;
 const height = input.length - 1;
 
-console.log('w'+width+'h'+height);
+// console.log('w'+width+'h'+height);
 
 let currentX = 0;
 let currentY = 0;
@@ -28,7 +28,7 @@ let total = 0;
 
 while (currentY < height){
     currentX += slope.right;
-    if (currentX > width) currentX = currentX - width;
+    if (currentX > width) currentX = currentX - width + 1;
     currentY += slope.down;
     if (currentY > height) return;
     if (input[currentY].charAt(currentX) === "#") {
