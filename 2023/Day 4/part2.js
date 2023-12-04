@@ -18,17 +18,17 @@ for (let card in input){
 };
 
 for (let i in input){
-    for (let card = 0; card < cardDupes[i]; card++){
-        const current = input[i].replace(/Card .+: /,'').replace(/\r/,'').split(' | ');
-        let myNumbers = current[0].match(/.{0,3}/g).map(Number);
-        let winningNumbers = current[1].match(/.{0,3}/g).map(Number);
-        
-        let thisScore = 0;
-        for (let j = 0; j < myNumbers.length - 1; j++){
-            if (winningNumbers.indexOf(myNumbers[j]) != -1){
-                thisScore ++;
-            }
+    const current = input[i].replace(/Card .+: /,'').replace(/\r/,'').split(' | ');
+    let myNumbers = current[0].match(/.{0,3}/g).map(Number);
+    let winningNumbers = current[1].match(/.{0,3}/g).map(Number);
+    
+    let thisScore = 0;
+    for (let j = 0; j < myNumbers.length - 1; j++){
+        if (winningNumbers.indexOf(myNumbers[j]) != -1){
+            thisScore ++;
         }
+    }
+    for (let card = 0; card < cardDupes[i]; card++){
         for (let dupe = 0; dupe < thisScore; dupe++){
             cardDupes[parseInt(i)+(dupe+1)]++;
         }
