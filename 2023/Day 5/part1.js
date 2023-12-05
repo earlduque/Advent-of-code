@@ -1,4 +1,4 @@
-const useExample = true; // if false, uses input.txt
+const useExample = false; // if false, uses input.txt
 const exampleToUse = 1; // 1 or 2
 
 const path = __filename.split("\\"); // Change "\\" to "\/" if you're on mac
@@ -12,6 +12,52 @@ input = input.split('\n');
 
 // Part 1
 
+const seeds = input[0].replace(/\r/g,'').split(': ')[1].split(' ').map(Number);
+// console.log(seeds);
+
+const reMap = /.+-to-.+:/g;
+const maps = [];
+
+let thisMap = [];
 for (let i in input){
-    
+    if (i <= 1) continue;
+    if (input[i].match(reMap)){
+        continue;
+    } else if (input[i] == '\r'){
+        maps.push(thisMap);
+        thisMap = [];
+    } else if (i == input.length - 1){
+        thisMap.push(input[i].replace(/\r/g,'').split(' ').map(Number));
+        maps.push(thisMap);
+    } else {
+        thisMap.push(input[i].replace(/\r/g,'').split(' ').map(Number));
+    }
+}
+// console.log(maps);
+
+let locations = [];
+for (let i in seeds){
+    let source = seeds[i];
+    for (let j in maps){
+        source = convert(source, maps[j]);
+    }
+    locations.push(source);
+}
+// console.log(locations);
+
+console.log(Math.min(...locations));
+
+function convert(source, arr){ // array of destinationStart, sourceStart, length
+    let found = false;
+    for (let i in arr){
+        if (parseInt(source) >= parseInt(arr[i][1]) && parseInt(source) < parseInt(arr[i][1]) + parseInt(arr[i][2])){
+            let target = parseInt(arr[i][0] + (parseInt(source)- parseInt(arr[i][1])));
+            // console.log(source + ' goes to ' + target + ': ' + parseInt(arr[i][1]) + '-' + (parseInt(arr[i][1]) + parseInt(arr[i][2]) - 1));
+            return target;
+        }
+    }
+    if (found == false){
+        // console.log(source + ' goes to ' + source);
+        return parseInt(source);
+    }
 }
