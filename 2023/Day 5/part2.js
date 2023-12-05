@@ -52,7 +52,7 @@ for (let i in seeds){
 console.log('Lowest location: ' + location.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
 function searchRange(thisRange, level){
-    console.log("    ".repeat(level) + levelWords[level] + ': ' + thisRange[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' - ' + thisRange[1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+    console.log("|   ".repeat(level) + levelWords[level] + ': ' + thisRange[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' - ' + thisRange[1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
     if (level == 7) {
         if (location == null || (thisRange[0] < location && thisRange[0] > 0)) location = thisRange[0];
         return;
