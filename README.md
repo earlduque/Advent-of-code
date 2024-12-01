@@ -8,8 +8,13 @@ You don't need a computer science background to participate - just a little prog
 
 The SNDevs group participates together on the #advent-of-code channel on the [sndevs.com](https://sndevs.com/) server:
 
+New Leaderboard:
+https://adventofcode.com/2024/leaderboard/private/view/3824526
+Join Code: `3824526-525ac8a9`
+
+Old Leaderboard:
 https://adventofcode.com/2022/leaderboard/private/view/680037
-Join Code: 680037-b8dabe94
+Join Code: `680037-b8dabe94`
 
 ![sndevsaoc](https://github.com/earlduque/Advent-of-code/assets/31702109/5ba108ff-d7fd-472c-9e21-d9c989849381)
 
