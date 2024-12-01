@@ -23,8 +23,8 @@ for (let i in input){
 listA.sort();
 listB.sort();
 
-console.log(listA);
-console.log(listB);
+// console.log(listA);
+// console.log(listB);
 
 let total = 0;
 
