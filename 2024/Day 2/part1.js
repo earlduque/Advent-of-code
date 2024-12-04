@@ -18,7 +18,7 @@ for (let i in input){
     let report = input[i].split(' ');
 
     report = report.map(Number);
-    console.log(report);
+    // console.log(report);
     if (isGradual(report)) safe++;
 }
 
