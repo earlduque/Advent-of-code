@@ -30,22 +30,24 @@ for (let i in input){
     }
 }
 
+console.log(count);
+
 function checkX(originI, originJ){
-    if (checkDirection(parseInt(originI), parseInt(originJ), 0, 1)) count++;
-    if (checkDirection(parseInt(originI), parseInt(originJ), 0, -1)) count++;
-    if (checkDirection(parseInt(originI), parseInt(originJ), 1, 0)) count++;
-    if (checkDirection(parseInt(originI), parseInt(originJ), -1, 0)) count++;
-    if (checkDirection(parseInt(originI), parseInt(originJ), 1, 1)) count++;
-    if (checkDirection(parseInt(originI), parseInt(originJ), 1, -1)) count++;
-    if (checkDirection(parseInt(originI), parseInt(originJ), -1, 1)) count++;
-    if (checkDirection(parseInt(originI), parseInt(originJ), -1, -1)) count++;
+    const directions = [
+        [0, 1], [0, -1], [1, 0], [-1, 0],
+        [1, 1], [1, -1], [-1, 1], [-1, -1]
+    ];
+    
+    for (const [di, dj] of directions) {
+        if (checkDirection(parseInt(originI), parseInt(originJ), di, dj)) count++;
+    }
 }
 
 function checkDirection(originI, originJ, iD, jD){
     let thisString = "X";
     for (let i = 1; i < 4; i++){
-        const newY = originI + (i*iD);
-        const newX = originJ + (i*jD);
+        const newY = originI + (i * iD);
+        const newX = originJ + (i * jD);
         if (newX < bounds.left || newX > bounds.right || newY < bounds.top || newY > bounds.bottom){
             continue;
         }
