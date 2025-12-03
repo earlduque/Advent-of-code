@@ -1,5 +1,5 @@
-const useExample = true; // if false, uses input.txt
-const exampleToUse = 2; // 1 or 2
+const useExample = false; // if false, uses input.txt
+const exampleToUse = 1; // 1 or 2
 
 const path = __filename.split("\\"); // Change "\\" to "\/" if you're on mac
 const year = path[path.length-3];
@@ -12,6 +12,31 @@ input = input.split('\r\n');
 
 // Part 2
 
+let currentPosition = 50;
+let actualPassword = 0;
+
 for (let i in input){
+    const distance = parseInt(input[i].slice(1));
     
+    if (input[i].indexOf('L') > -1){
+        if (currentPosition === 0) {
+            actualPassword += Math.floor(distance / 100);
+        } else {
+            actualPassword += Math.floor(distance / 100);
+            if (distance % 100 >= currentPosition) {
+                actualPassword++;
+            }
+        }
+        
+        currentPosition = ((currentPosition - distance) % 100 + 100) % 100;
+    } else {
+        actualPassword += Math.floor(distance / 100);
+        if (currentPosition + (distance % 100) >= 100) {
+            actualPassword++;
+        }
+        
+        currentPosition = (currentPosition + distance) % 100;
+    }
 }
+
+console.log(actualPassword);

@@ -1,4 +1,4 @@
-const useExample = true; // if false, uses input.txt
+const useExample = false; // if false, uses input.txt
 const exampleToUse = 1; // 1 or 2
 
 const path = __filename.split("\\"); // Change "\\" to "\/" if you're on mac
@@ -12,6 +12,25 @@ input = input.split('\r\n');
 
 // Part 1
 
+let currentPosition = 50;
+let actualPassword = 0;
+
 for (let i in input){
-    console.log(`${i} & ${input[i]}`)   
+    if (input[i].indexOf('L') > -1 ){
+        currentPosition -= parseInt(input[i].slice(1));
+        // currentPosition = currentPosition < 0 ? 100 + currentPosition : currentPosition;
+        while (currentPosition < 0){
+            currentPosition += 100;
+        }
+    } else {
+        currentPosition += parseInt(input[i].slice(1));
+        // currentPosition = currentPosition % 100 == 100 ? 0 : currentPosition % 100;
+        currentPosition = currentPosition % 100;
+    }
+    // console.log(currentPosition);
+    if (currentPosition === 0) {
+        actualPassword++;
+    }
 }
+
+console.log(actualPassword);
