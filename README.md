@@ -9,7 +9,7 @@ You don't need a computer science background to participate - just a little prog
 The SNDevs group participates together on the #advent-of-code channel on the [sndevs.com](https://sndevs.com/) server:
 
 New Leaderboard:
-https://adventofcode.com/2024/leaderboard/private/view/3824526
+https://adventofcode.com/2025/leaderboard/private/view/3824526
 To join: Login, go [here](https://adventofcode.com/2024/leaderboard/private) then use `3824526-525ac8a9`
 
 Old Leaderboard:
@@ -24,11 +24,16 @@ To join: Login, go [here](https://adventofcode.com/2024/leaderboard/private) the
 2. Every day of AoC, I copy and paste the example input (as is) into the example file, and the challenge input into the input file (again, as is).
 3. The code on the part1 and part2 files, when ran, grabs the text from the example or input file for me to use in my challenge code.
 4. I use [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) to execute the code inside VS Code.
+edit: I don't use Code Runner anymore and just use `Terminal: Run Active File In Active Terminal` now
 5. Any of my `console.log()` statements appear in the ouput window in my VS Code.
 
-## control+shift+p > "run code"
+## control+shift+p > Run code
+
+`run code` if using Code Runner
 
 ![image](https://github.com/earlduque/Advent-of-code/assets/31702109/af625eb6-3e3d-4273-a212-bb0eab1fb2db)
+
+or just `Terminal: Run Active File In Active Terminal` if you aren't.
 
 ## results are outputted
 
